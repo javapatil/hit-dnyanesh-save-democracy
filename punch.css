@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 400px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+}
+
+.counter {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.image-box {
+  position: relative;
+  width: 100%;
+  height: 375px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#skinHit{
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  background: rgba(255, 0, 0, 0.35);
+
+  border-radius: 50%;
+
+  top: 80px;
+  left: 100px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  mix-blend-mode: multiply;
+
+  filter: blur(20px);
+}
+
+/* Active Effect */
+.skin-red{
+  animation: skinDamage 0.4s;
+}
+
+@keyframes skinDamage{
+
+  0%{
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  40%{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100%{
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+}
+
+
+#personImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.2s;
+}
+
+.shake {
+  animation: shake 0.3s;
+  filter: brightness(0.8) sepia(1) hue-rotate(-40deg) saturate(5);
+}
+
+@keyframes shake {
+
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  25% {
+    transform: translate(-8px, 0px);
+  }
+
+  50% {
+    transform: translate(8px, 0px);
+  }
+
+  75% {
+    transform: translate(-8px, 0px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+
+}
+
+.punch {
+  position: absolute;
+  left: -100px;
+  top: 45%;
+  font-size: 80px;
+  opacity: 0;
+}
+
+.animate-punch {
+  animation: punchMove 0.5s linear;
+}
+
+@keyframes punchMove {
+
+  0% {
+    left: -100px;
+    opacity: 1;
+  }
+
+  60% {
+    left: 140px;
+    opacity: 1;
+  }
+
+  100% {
+    left: 320px;
+    opacity: 0;
+  }
+
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  background: red;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: darkred;
+}
